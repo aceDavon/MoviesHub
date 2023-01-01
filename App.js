@@ -3,6 +3,7 @@ import {createNativeStackNavigator} from '@react-navigation/native-stack';
 import React, {useEffect} from 'react';
 import {useDispatch} from 'react-redux';
 import {popularMovies} from './app/redux/slices/movieSlice';
+import AllMovies from './app/screens/allMovies';
 import MovieDetail from './app/screens/details/movieDetail';
 import Welcome from './app/welcome';
 
@@ -14,20 +15,25 @@ const App = () => {
     dispatch(popularMovies());
   }, []);
   return (
-      <NavigationContainer>
-        <Stack.Navigator>
-          <Stack.Screen
-            component={Welcome}
-            name="Welcome"
-            options={{title: 'Home'}}
-          />
-          <Stack.Screen
-            component={MovieDetail}
-            name="Details"
-            options={{title: 'Details'}}
-          />
-        </Stack.Navigator>
-      </NavigationContainer>
+    <NavigationContainer>
+      <Stack.Navigator>
+        <Stack.Screen
+          component={Welcome}
+          name="Welcome"
+          options={{title: 'Home'}}
+        />
+        <Stack.Screen
+          component={MovieDetail}
+          name="Details"
+          options={{title: 'Details'}}
+        />
+        <Stack.Screen
+          component={AllMovies}
+          name="AllMovies"
+          options={{title: 'Popular Movies'}}
+        />
+      </Stack.Navigator>
+    </NavigationContainer>
   );
 };
 

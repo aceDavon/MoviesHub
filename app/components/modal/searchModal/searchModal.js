@@ -1,6 +1,7 @@
 import React, {useState} from 'react';
 import {FlatList, Modal, Pressable, Text, View} from 'react-native';
 import {Styles} from './searchModal.style';
+import { s as tw } from 'react-native-wind'
 
 const SearchModal = ({arr, fns}) => {
   const [values, setValues] = useState(true);

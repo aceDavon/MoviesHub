@@ -61,7 +61,7 @@ const MovieSlice = createSlice({
             poster_path: `${imagePath}${x.poster_path}`,
           };
         });
-        state.movies = state.popular.concat(fullData);
+        state.popular = fullData;
       })
       .addCase(SearchMovies.pending, state => {
         state.status = 'searching';
